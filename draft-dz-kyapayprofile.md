@@ -62,15 +62,27 @@ The `alg` value `ES256` is a digital signature algorithm described in
 
 ## Roles
 
+Agent:
+: ...
+
+Agent Platform:
+: ...
+
 Principal:
 : A legal entity (human or organization) on whose behalf / in whose authority
-  an agent or service is operating.
+an agent or service is operating.
 
 Buyer Principal:
 : A legal entity (human or organization) behind the purchase / consumption of a
   product or service. Typically interacts with the seller via an agent, agentic
   interface, or a programmatic interface (API). The Buyer Principal gives the
   agent or interface permission to act on their behalf.
+
+Seller Service:
+: ...
+
+Settlement Network:
+: ...
 
 # KYAPay Token Schemas
 
@@ -97,7 +109,30 @@ PAY (Payment), and KYA+PAY (combined Know Your Agent and Payment) Tokens:
 `exp`:
 : REQUIRED - as defined in {{Section 4.1.4 of RFC7519}}.
 
+`env`:
+: OPTIONAL - Issuer environment (such as "sandbox" or "production").
+
+`ver`:
+: ? - Version of the token schema.
+
+`ssi`:
+: ? - Seller Service ID that this token was created for.
+
+`btg`:
+: ? - Buyer tag, an opaque reference ID internal to the buyer.
+
 ## KYA Token
+
+The following identity related claims are used within KYA and KYA+PAY tokens:
+
+`bid`:
+: ? - Buyer identity claims
+
+`apd`:
+: OPTIONAL - Agent Platform identity claims.
+
+`aid`:
+: OPTIONAL - Agent identity claims.
 
 The following informative example displays a decoded KYA type token.
 
@@ -114,13 +149,11 @@ The following informative example displays a decoded KYA type token.
   "sub": "<Buyer Agent Account ID>",
   "aud": "<Seller Agent Account ID>",
 
-  // Claims common to both 'pay' and 'kya' types
   "env": "<Issuer environment (sandbox, production, etc)>",
   "ver": "1", // Version of the token
   "ssi": "<Seller Service ID>", // Seller service that this token was created for
   "btg": "<Buyer Tag (Buyer's internal reference ID)>",
 
-  // Skyfire-defined claims for 'kya' (Know Your Agent) type tokens
   "bid": {  // Buyer Identity claims
     "email": "buyer@buyer.com”,
     ...
@@ -134,6 +167,33 @@ The following informative example displays a decoded KYA type token.
 {: #example-decoded-kya-token align="left" title="A KYA type token"}
 
 ## PAY Token
+
+The following payment related claims are used within PAY and KYA+PAY type tokens:
+
+`spr`:
+: OPTIONAL - Seller service price.
+
+`sps`:
+: OPTIONAL - Seller service pricing model (for example, `PAY_PER_USE`).
+
+`amount`:
+: ? - Token amount in currency units.
+
+`cur`:
+: ? - Currency unit, as defined in ...
+
+`value`:
+: ? - Token amount in settlement network
+
+`mnr`:
+: OPTIONAL - Maximum number of requests when `sps` is `PAY_PER_USE`
+
+`stp`:
+: OPTIONAL - Settlement type (`COIN` | `CARD` | `BANK`).
+
+`sti`:
+: OPTIONAL - Meta information for payment settlement, depending on settlement
+  type.
 
 The following informative example displays a decoded PAY type token.
 
