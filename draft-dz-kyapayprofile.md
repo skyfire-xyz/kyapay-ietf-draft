@@ -27,6 +27,9 @@ author:
 #    organization: Your Organization Here
 #    email: your.email@example.com
 
+#contributor:
+# see https://github.com/cabo/kramdown-rfc/wiki/Syntax2#authors-contributors
+
 normative:
   RFC7518:
   RFC7519:
