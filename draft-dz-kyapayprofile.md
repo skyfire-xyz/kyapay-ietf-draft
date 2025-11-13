@@ -29,6 +29,8 @@ author:
 #    email: your.email@example.com
 
 normative:
+  RFC7518:
+  RFC7519:
 
 informative:
 
@@ -53,7 +55,47 @@ more importantly identify their human principals.
 
 {::boilerplate bcp14-tagged}
 
+The terms `iss`, `iat`, `exp`, `jti`, `aud`, `typ` are defined in {{RFC7519}}.
+
+The `alg` value `ES256` is a digital signature algorithm described in
+{{Section 3.4 of RFC7518}}.
+
+## Roles
+
+Principal:
+: A legal entity (human or organization) on whose behalf / in whose authority
+  an agent or service is operating.
+
+Buyer Principal:
+: A legal entity (human or organization) behind the purchase / consumption of a
+  product or service. Typically interacts with the seller via an agent, agentic
+  interface, or a programmatic interface (API). The Buyer Principal gives the
+  agent or interface permission to act on their behalf.
+
 # KYAPay Token Schemas
+
+## Common Token Claims
+
+The following are claims in common, used within the KYA (Know Your Agent),
+PAY (Payment), and KYA+PAY (combined Know Your Agent and Payment) Tokens:
+
+`iss`:
+: REQUIRED - The issuer as defined in ...
+
+`sub`:
+: ? - Subject Identifier as defined in ...
+
+`aud`:
+: REQUIRED - ...
+
+`iat`:
+: REQUIRED - as defined in {{Section 4.1.6 of RFC7519}}.
+
+`jti`:
+: REQUIRED - Unique ID of this JWT as defined in {{Section 4.1.7 of RFC7519}}.
+
+`exp`:
+: REQUIRED - as defined in {{Section 4.1.4 of RFC7519}}.
 
 ## KYA Token
 
