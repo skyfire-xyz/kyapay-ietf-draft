@@ -19,7 +19,6 @@ venue:
 #  type: Working Group
 #  mail: WG@example.com
 #  arch: https://example.com/WG
-  github: "interop-alliance/kyapay-ietf-draft"
   latest: "https://interop-alliance.github.io/kyapay-ietf-draft/draft-dz-kyapayprofile.html"
 
 author:
@@ -63,10 +62,10 @@ The `alg` value `ES256` is a digital signature algorithm described in
 ## Roles
 
 Agent:
-: ...
+: todo ...
 
 Agent Platform:
-: ...
+: todo ...
 
 Principal:
 : A legal entity (human or organization) on whose behalf / in whose authority
@@ -79,10 +78,10 @@ Buyer Principal:
   agent or interface permission to act on their behalf.
 
 Seller Service:
-: ...
+: todo ...
 
 Settlement Network:
-: ...
+: todo ...
 
 # KYAPay Token Schemas
 
@@ -143,24 +142,24 @@ The following informative example displays a decoded KYA type token.
   "typ": "kya+JWT"
 }.{
   "iss": "<URL of the token issuer>",
-  "iat": 1742245254,  // 'issued at' timestamp
-  "exp": 1773867654,  // 'expiration' timestamp
-  "jti": "b9821893-7699-4d24-af06-803a6a16476b", // Unique token ID
+  "iat": 1742245254,
+  "exp": 1773867654,
+  "jti": "b9821893-7699-4d24-af06-803a6a16476b",
   "sub": "<Buyer Agent Account ID>",
   "aud": "<Seller Agent Account ID>",
 
   "env": "<Issuer environment (sandbox, production, etc)>",
-  "ver": "1", // Version of the token
-  "ssi": "<Seller Service ID>", // Seller service that this token was created for
+  "ver": "1",
+  "ssi": "<Seller Service ID>",
   "btg": "<Buyer Tag (Buyer's internal reference ID)>",
 
-  "bid": {  // Buyer Identity claims
+  "bid": {
     "email": "buyer@buyer.com”,
     ...
   },
-  "apd": { // Agent Platform Identity claims
+  "apd": {
   },
-  "aid": { // Agent Identity claims
+  "aid": {
   }
 }
 ~~~
@@ -204,30 +203,26 @@ The following informative example displays a decoded PAY type token.
   "typ": "pay+JWT"
 }.{
   "iss": "<URL of the token issuer>",
-  "iat": 1742245254,  // 'issued at' timestamp
-  "exp": 1773867654,  // 'expiration' timestamp
-  "jti": "b9821893-7699-4d24-af06-803a6a16476b", // Unique token ID
+  "iat": 1742245254,
+  "exp": 1773867654,
+  "jti": "b9821893-7699-4d24-af06-803a6a16476b",
   "sub": "<Buyer Agent Account ID>",
   "aud": "<Seller Agent Account ID>",
 
-  // Claims common to both 'pay' and 'kya' types
   "env": "<Issuer environment (sandbox, production, etc)>",
-  "ver": "1", // Version of the token
-  "ssi": "<Seller Service ID>", // Seller service that this token was created for
+  "ver": "1",
+  "ssi": "<Seller Service ID>",
   "btg": "<Buyer Tag (Buyer's internal reference ID)>",
 
-  // Claims for 'pay' (Agent Payment) type tokens
-  "spr": "0.010000", // Seller Service Price
-  "sps": "PAY_PER_USE", // Seller Service Pricing Model
-  "amount": "15.000000", // Token Amount in Currency units
-  "cur": "USD", // Currency unit
-  "value": "15000000", // Token Amount in Settlement Network
-  "mnr": "1500", // Maximum number of requests when sps == "PAY_PER_USE"
-  "stp": "<COIN | CARD | BANK>", // Settlement type
-  "sti": { // Meta information for payment settlement depending on the settlement type
-    "type": "<'type' is dependant on 'sti'>", // for COIN - USDC | x402; for CARD - VISA_VIC;
-    // For type == USDC - No more sub-claims
-    // For type == VISA_VIC
+  "spr": "0.010000",
+  "sps": "PAY_PER_USE",
+  "amount": "15.000000",
+  "cur": "USD",
+  "value": "15000000",
+  "mnr": "1500",
+  "stp": "<COIN | CARD | BANK>",
+  "sti": {
+    "type": "<'type' is dependant on 'sti' for COIN - USDC | x402; for CARD - VISA_VIC;>",
     "dynamicDataExpiration": "<Timestamp when DTVV expires>",
     "dynamicDataId": "<Visa specific identifier>",
     "dynamicDataType": "DAVV",
@@ -252,40 +247,35 @@ The following informative example displays a decoded KYA+PAY type token.
   "typ": "kya+pay+JWT"
 }.{
   "iss": "<URL of the token issuer>",
-  "iat": 1742245254,  // 'issued at' timestamp
-  "exp": 1773867654,  // 'expiration' timestamp
-  "jti": "b9821893-7699-4d24-af06-803a6a16476b", // Unique token ID
+  "iat": 1742245254,
+  "exp": 1773867654,
+  "jti": "b9821893-7699-4d24-af06-803a6a16476b",
   "sub": "<Buyer Agent Account ID>",
   "aud": "<Seller Agent Account ID>",
 
-  // Claims common to both 'pay' and 'kya' types
   "env": "<Issuer environment (sandbox, production, etc)>",
-  "ver": "1", // Version of the token
-  "ssi": "<Seller Service ID>", // Seller service that this token was created for
+  "ver": "1",
+  "ssi": "<Seller Service ID>",
   "btg": "<Buyer Tag (Buyer's internal reference ID)>",
 
-  // Claims for 'kya' (Know Your Agent) type tokens
-  "bid": {  // Buyer Identity claims
+  "bid": {
     "email": "buyer@buyer.com”,
     ...
   },
-  "apd": { // Agent Platform Identity claims
+  "apd": {
   },
-  "aid": { // Agent Identity claims
+  "aid": {
   },
 
-  // Claims for 'pay' (Agent Payment) type tokens
-  "spr": "0.010000", // Seller Service Price
-  "sps": "PAY_PER_USE", // Seller Service Pricing Model
-  "amount": "15.000000", // Token Amount in Currency units
-  "cur": "USD", // Currency unit
-  "value": "15000000", // Token Amount in Settlement Network
-  "mnr": "1500", // Maximum number of requests when sps == "PAY_PER_USE"
-  "stp": "<COIN | CARD | BANK>", // Settlement type
-  "sti": { // Meta information for payment settlement depending on the settlement type
-    "type": "<'type' is dependant on 'sti'>", // for COIN - USDC | x402; for CARD - VISA_VIC;
-    // For type == USDC - No more sub-claims
-    // For type == VISA_VIC
+  "spr": "0.010000",
+  "sps": "PAY_PER_USE",
+  "amount": "15.000000",
+  "cur": "USD",
+  "value": "15000000",
+  "mnr": "1500",
+  "stp": "<COIN | CARD | BANK>",
+  "sti": {
+    "type": "<'type' is dependant on 'sti'>",
     "dynamicDataExpiration": "<Timestamp when DTVV expires>",
     "dynamicDataId": "<Visa specific identifier>",
     "dynamicDataType": "DAVV",
