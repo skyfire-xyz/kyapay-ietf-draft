@@ -92,7 +92,8 @@ an agent or service is operating.
 ### Buy-Side Roles
 
 Buyer Agent:
-: An Agent performing tasks on behalf of a buyer, that has its own Agent Identity.
+: An Agent performing tasks on behalf of a Buyer Principal, that has its own
+  Agent Identity.
 
 Buyer Agent Platform:
 : The Agent Platform hosting the Buyer Agent. Some use cases require the Platform
@@ -100,22 +101,41 @@ Buyer Agent Platform:
 
 Buyer Identity:
 : The aggregate verified identity assertions of the buy-side entities, typically
-  encompassing the Human Principal, the Buyer Agent Platform, and the Buyer Agent
+  encompassing the Buyer Principal, the Buyer Agent Platform, and the Buyer Agent
   itself. This composite identity is conveyed via the KYA token, allowing the
   seller to verify the entire chain of responsibility behind a request.
   Grouped into the `bid` claim.
 
 Buyer Principal:
 : A legal entity (human or organization) behind the purchase / consumption of a
-  product or service. Typically interacts with the seller via an agent, agentic
-  interface, or a programmatic interface (API). The Buyer Principal gives the
-  Buyer Agent the permission to act on their behalf. Many sellers are required
-  to be able to determine the Buyer Identity in order to comply with KYC/AML
-  regulations, accounting standards, and to maintain a direct customer
-  relationships.
+  product or service. The Principal typically interacts with the seller via a
+  Buyer Agent. Many sellers are required to be able to determine the Buyer
+  Identity in order to comply with KYC/AML regulations, accounting standards,
+  and to maintain a direct customer relationships.
 
-Seller Service:
-: todo ...
+### Sell-Side Roles
+
+Seller Agent:
+: An Agent performing tasks on behalf of a Seller Principal, directly interacting
+  with Buyer Agents to facilitate discovery and purchase. Typically runs on
+  Internet-connected infrastructure, and discoverable via service directories.
+
+Seller Agent Platform:
+: The Agent Platform that hosts Seller Agents.
+
+Seller Identity:
+: The aggregate verified identity assertions of the sell-side entities, typically
+  encompassing the Seller Principal, the Seller Agent Platform, as well as the
+  Seller Agent Identity.
+  These various aspects of Seller Identity allow Buyers and Buyer Agents to
+  perform reputation-based logic, to verify that they are interacting with
+  the authorized (and expected) counter-party, and to fulfill KYC/AML regulation
+  requirements.
+
+Seller Principal:
+: A legal entity (human or organization) that owns the product, service, or
+  content being sold, and serves as the ultimate beneficiary of a business
+  transaction.
 
 Settlement Network:
 : todo ...
