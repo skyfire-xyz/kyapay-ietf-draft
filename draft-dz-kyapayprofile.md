@@ -137,8 +137,19 @@ Seller Principal:
   content being sold, and serves as the ultimate beneficiary of a business
   transaction.
 
-Settlement Network:
-: todo ...
+### Ecosystem Infrastructure Roles
+
+Identity Token Issuer:
+: A trusted neutral entity that conducts Know Your Customer (KYC) and Know Your
+  Business (KYB) verifications. It is responsible for issuing cryptographically
+  signed `kya` tokens that attest to the identity of the Principal, Agent, and Agent
+  Platform, for both Buyers and Sellers.
+
+Payment Token Issuer:
+: A trusted entity responsible for facilitating the exchange of payments and
+  credentials between the Buyer and Seller. It issues signed `pay` tokens that
+  enable settlement via various schemes (Cards, Banks, Cryptocurrency), without
+  exposing raw credentials or secrets.
 
 # KYAPay Token Schemas
 
