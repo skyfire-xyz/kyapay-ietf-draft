@@ -33,6 +33,7 @@ author:
 normative:
   RFC7518:
   RFC7519:
+  RFC6749:
 
 informative:
 
@@ -65,20 +66,53 @@ The `alg` value `ES256` is a digital signature algorithm described in
 ## Roles
 
 Agent:
-: todo ...
+: An application, service, or specific software process, executing on behalf
+  of a Principal.
+
+Agent Identity:
+: A unique identifier and a set of claims describing an agent. Grouped into the
+  `aid` claim for convenience. Because an agent can be public or confidential
+  (as described in {{Section 2.1 of RFC6749}}), the level of assurance for these
+  claims varies dramatically. Agents also vary in terms of longevity -- they can
+  have stable long-running identities (such as those of a server-side confidential
+  client), or they can be transient and ephemeral, and correspond to individual
+  API calls or compute workloads.
 
 Agent Platform:
-: todo ...
+: The service provider and runtime environment hosting the Agent, such as a
+  cloud compute provider or AI operator service. Assertions about the agent
+  platform are grouped into the `apd` claim, and are primarily used to identify
+  the Principal entity operating the platform, allowing consumers of the token to
+  apply reputation-based logic or offer platform-specific services.
 
 Principal:
 : A legal entity (human or organization) on whose behalf / in whose authority
 an agent or service is operating.
 
+### Buy-Side Roles
+
+Buyer Agent:
+: An Agent performing tasks on behalf of a buyer, that has its own Agent Identity.
+
+Buyer Agent Platform:
+: The Agent Platform hosting the Buyer Agent. Some use cases require the Platform
+  to have its own verified identity assertions, grouped into the `apd` claim.
+
+Buyer Identity:
+: The aggregate verified identity assertions of the buy-side entities, typically
+  encompassing the Human Principal, the Buyer Agent Platform, and the Buyer Agent
+  itself. This composite identity is conveyed via the KYA token, allowing the
+  seller to verify the entire chain of responsibility behind a request.
+  Grouped into the `bid` claim.
+
 Buyer Principal:
 : A legal entity (human or organization) behind the purchase / consumption of a
   product or service. Typically interacts with the seller via an agent, agentic
   interface, or a programmatic interface (API). The Buyer Principal gives the
-  agent or interface permission to act on their behalf.
+  Buyer Agent the permission to act on their behalf. Many sellers are required
+  to be able to determine the Buyer Identity in order to comply with KYC/AML
+  regulations, accounting standards, and to maintain a direct customer
+  relationships.
 
 Seller Service:
 : todo ...
