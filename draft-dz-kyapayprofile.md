@@ -36,6 +36,7 @@ normative:
   RFC6749:
 
 informative:
+  RFC8725:
 
 ...
 
@@ -167,8 +168,9 @@ PAY (Payment), and KYA+PAY (combined Know Your Agent and Payment) Tokens:
   a given issuer.
 
 `aud`:
-: REQUIRED - Audience (used for audience binding and replay attack mitigation).
-  Single string value (for multiple audience tokens, separate tokens should be used).
+: REQUIRED - Audience (used for audience binding and replay attack mitigation),
+  uniquely identifying the seller agent.
+  A single string value.
 
 `iat`:
 : REQUIRED - as defined in {{Section 4.1.6 of RFC7519}}.
@@ -360,14 +362,56 @@ The following informative example displays a decoded KYA+PAY type token.
 ~~~
 {: #example-decoded-kya-pay-token align="left" title="A KYA+PAY type token"}
 
+# Token Validation
+
+## Validating KYA and PAY Tokens
+
+### JWT Header Validation
+
+1. `alg` - JWTs MUST be signed using allowed JWA algorithms (currently, `ES256`).
+2. `kid` - The `kid` claim MUST be present, and set to a valid key id discoverable
+   via the issuer's (payload `iss` claim) JWK Set.
+3. `typ` - The `typ` claim MUST be one of: `kya+JWT`, `pay+JWT`, or `kya+pay+JWT`
+
+### JWT Payload Validation
+
+1. **Verify JWT Signature** - Valid JWTs MUST be signed with a valid key belonging
+  To the token's issuer (`iss` claim)
+2. **Validate `iss` Claim** - Ensure that the token is signed by the expected
+  valid issuer.
+3. **Validate the `exp` Claim** - The verifier MUST validate that the token has
+  not expired, within the verifier's clock drift tolerance.
+4. **Validate the `iat` Claim** - The verifier MUST validate that the token was
+  issued in the past, within the verifier's clock drift tolerance.
+5. **Validate the `jti` Claim** - Ensure that the `jti` claim is present, and is
+  a UUID.
+6. **Validate the `aud` Claim** - ...
+7. **Validate the `env` Claim** - Ensure that the Environment claim is set to
+  an expected and usecase-appropriate value (such as `production`, `sandbox`, etc)
+
+## Validating PAY Tokens
+
+For tokens of type `pay+JWT` or `kya+pay+JWT`, perform the steps described in
+the Validating KYA and PAY Tokens section.
+
+In addition, perform the following steps.
+
+1. The `value` claim is greater than 0.
+2. The `amount` claim is greater than 0.
+3. The `cur` claim is set to a currency the seller supports (such as `USD`)
+4. The `sps` claim, if present, matches the pricing scheme that you configured in
+  the seller's service
+5. The `spr` claim, if present, matches the price that you configured in the
+  seller's service
+
 # Security Considerations
 
-TODO Security
+When validating the JWTs described in this specification, implementers SHOULD
+follow the best practices and guidelines laid out in {{RFC8725}}.
 
 # IANA Considerations
 
 This document has no IANA actions.
-
 
 --- back
 
