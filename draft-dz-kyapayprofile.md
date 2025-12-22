@@ -159,13 +159,16 @@ The following are claims in common, used within the KYA (Know Your Agent),
 PAY (Payment), and KYA+PAY (combined Know Your Agent and Payment) Tokens:
 
 `iss`:
-: REQUIRED - The issuer as defined in ...
+: REQUIRED - Url of the token's issuer. Used for discovering JWK Sets for token
+  signature verification, via the `/.well-known/jwks.json` suffix mechanism.
 
 `sub`:
-: ? - Subject Identifier as defined in ...
+: REQUIRED - Subject Identifier. Must be pairwise unique within
+  a given issuer.
 
 `aud`:
-: REQUIRED - ...
+: REQUIRED - Audience (used for audience binding and replay attack mitigation).
+  Single string value (for multiple audience tokens, separate tokens should be used).
 
 `iat`:
 : REQUIRED - as defined in {{Section 4.1.6 of RFC7519}}.
@@ -180,13 +183,13 @@ PAY (Payment), and KYA+PAY (combined Know Your Agent and Payment) Tokens:
 : OPTIONAL - Issuer environment (such as "sandbox" or "production").
 
 `ver`:
-: ? - Version of the token schema.
+: OPTIONAL - Version of the token schema.
 
 `ssi`:
-: ? - Seller Service ID that this token was created for.
+: OPTIONAL - Seller Service ID that this token was created for.
 
 `btg`:
-: ? - Buyer tag, an opaque reference ID internal to the buyer.
+: OPTIONAL - Buyer tag, an opaque reference ID internal to the buyer.
 
 ## KYA Token
 
