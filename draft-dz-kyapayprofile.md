@@ -157,7 +157,7 @@ Payment Token Issuer:
 ## Common Token Claims
 
 The following are claims in common, used within the KYA (Know Your Agent),
-PAY (Payment), and KYA+PAY (combined Know Your Agent and Payment) Tokens:
+PAY (Payment), and KYA+PAY (combined Know Your Agent and Payment) Tokens.
 
 `iss`:
 : REQUIRED - Url of the token's issuer. Used for discovering JWK Sets for token
@@ -198,13 +198,17 @@ PAY (Payment), and KYA+PAY (combined Know Your Agent and Payment) Tokens:
 The following identity related claims are used within KYA and KYA+PAY tokens:
 
 `bid`:
-: ? - Buyer identity claims
+: OPTIONAL (Required for buyer identity use cases) - A map of buyer identity
+  claims.
 
 `apd`:
 : OPTIONAL - Agent Platform identity claims.
 
 `aid`:
 : OPTIONAL - Agent identity claims.
+
+`rid`:
+: OPTIONAL - Referrer identity claims.
 
 The following informative example displays a decoded KYA type token.
 
@@ -227,16 +231,133 @@ The following informative example displays a decoded KYA type token.
   "btg": "<Buyer Tag (Buyer's internal reference ID)>",
 
   "bid": {
-    "email": "buyer@buyer.com”,
-    ...
+    "email": "buyer@buyer.com”
   },
   "apd": {
   },
   "aid": {
+  },
+  "rid": {
   }
 }
 ~~~
 {: #example-decoded-kya-token align="left" title="A KYA type token"}
+
+### `bid` - Buyer Identity Sub-claims
+
+The Buyer Identity (`bid`) claim contains sub-claims useful for buyer use cases,
+as follows.
+
+`email`:
+: REQUIRED - Buyer email.
+
+#### OPTIONAL Human Principal Sub-claims
+
+`nameFirst`:
+: First name of buyer human principal.
+
+`nameMiddle`:
+: Middle name of buyer human principal.
+
+`nameLast`:
+: Last name of buyer human principal.
+
+`phoneNumber`:
+: Phone number associated with principal.
+
+`addressStreet1`:
+: First line of address.
+
+`addressStreet2`:
+: Second line of address.
+
+`addressCity`:
+: City.
+
+`addressSubdivision`:
+: Subdivision.
+
+`addressPostalCode`:
+: Postal Code.
+
+`addressCountryCode`:
+: ISO country code.
+
+`birthdate`:
+: Human principal birth date.
+
+#### OPTIONAL Organizational or Business Entity Principal Sub-claims
+
+`businessName`:
+: Name of principal entity.
+
+`businessTaxIdentificationNumber`:
+: Relevant Tax Identification Number of principal entity.
+
+`businessPhysicalAddressFull`:
+: Full physical address of principal entity.
+
+`businessPhysicalAddressStreet1`:
+: First line of physical address of principal entity.
+
+`businessPhysicalAddressStreet2`:
+: Second line of physical address of principal entity.
+
+`businessPhysicalAddressCity`:
+: City component of physical address.
+
+`businessPhysicalAddressSubdivision`:
+: Subdivision component of physical address.
+
+`businessPhysicalAddressPostalCode`:
+: Postal code component of physical address.
+
+`businessPhysicalAddressCountryCode`:
+: ISO country code component of physical address.
+
+`businessRegisteredAddressStreet1`:
+: First line of registered address of principal entity.
+
+`businessRegisteredAddressStreet2`:
+: Second line of registered address of principal entity.
+
+`businessRegisteredAddressCity`:
+: City component of registered address of principal entity.
+
+`businessRegisteredAddressSubdivision`:
+: Subdivision component of registered address of principal entity.
+
+`businessRegisteredAddressPostalCode`:
+: Postal code component of registered address of principal entity.
+
+`businessRegisteredAddressCountryCode`:
+: ISO country code of registered address of principal entity.
+
+### Agent Platform Identity `aid` Sub-claims
+
+The `aid` claim itself is optional. If present, it may contain the following
+sub-claims.
+
+`id`:
+: REQUIRED - Agent Platform identifier.
+
+`name`:
+: REQUIRED - Agent Platform name.
+
+`nameFirst`:
+: First name of agent platform human principal.
+
+`nameMiddle`:
+: Middle name of agent platform human principal.
+
+`nameLast`:
+: Last name of agent platform human principal.
+
+`phoneNumber`:
+: Phone number associated with agent platform.
+
+`businessName`:
+: Business name associated with agent platform.
 
 ## PAY Token
 
@@ -249,13 +370,13 @@ The following payment related claims are used within PAY and KYA+PAY type tokens
 : OPTIONAL - Seller service pricing model (for example, `PAY_PER_USE`).
 
 `amount`:
-: ? - Token amount in currency units.
+: OPTIONAL - Token amount in currency units.
 
 `cur`:
-: ? - Currency unit, as defined in ...
+: OPTIONAL - Currency unit, as defined in ...
 
 `value`:
-: ? - Token amount in settlement network
+: OPTIONAL - Token amount in settlement network
 
 `mnr`:
 : OPTIONAL - Maximum number of requests when `sps` is `PAY_PER_USE`
