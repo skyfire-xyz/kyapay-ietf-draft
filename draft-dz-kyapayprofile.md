@@ -51,9 +51,19 @@ tokens in an interoperable manner.
 
 # Introduction
 
-As agents evolve from pre-orchestrated workflow automations to truly autonomous
-or semi-autonomous assistants, they need the ability to identify themselves and
-more importantly identify their human principals.
+As software agents evolve from pre-orchestrated workflow automations to truly
+autonomous or semi-autonomous assistants, they require the ability to identify
+themselves -- and more importantly, identify their human principals -- to external
+systems. Agents acting on behalf of users to discover services, create accounts,
+or execute actions currently face significant operational barriers.
+
+The KYAPay token addresses these challenges by providing a standard envelope to
+carry verified identity and payment information. By utilizing "kya" (Agent
+Identity) and "pay" (Payment) tokens, agents can identify their human principals
+to services, sites, bot managers, customer identity and access management (CIAM)
+systems, and fraud detectors. This enables agents to bypass common blocking
+mechanisms and access services that were previously restricted to manual human
+interaction.
 
 # Conventions and Definitions
 
@@ -536,7 +546,3 @@ This document has no IANA actions.
 
 --- back
 
-# Acknowledgments
-{:numbered="false"}
-
-TODO acknowledge.
