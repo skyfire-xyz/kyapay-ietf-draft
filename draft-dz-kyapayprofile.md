@@ -23,11 +23,12 @@ venue:
 
 author:
  -
-    fullname: Dmitri Zagidulin
-#    organization: Your Organization Here
+    name: Ankit Agarwal
+    organization: Skyfire
 #    email: your.email@example.com
 
-#contributor:
+contributor:
+    name: Dmitri Zagidulin
 # see https://github.com/cabo/kramdown-rfc/wiki/Syntax2#authors-contributors
 
 normative:
