@@ -3,7 +3,7 @@ title: "KYAPay Profile"
 #abbrev: ""
 category: info
 
-docname: draft-dz-kyapayprofile-latest
+docname: draft-skyfire-kyapayprofile-latest
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 #number:
 date:
@@ -14,12 +14,12 @@ v: 3
 keyword:
  - agent
 venue:
-  github: "interop-alliance/kyapay-ietf-draft"
+  github: "skyfire-xyz/kyapay-ietf-draft"
 #  group: WG
 #  type: Working Group
 #  mail: WG@example.com
 #  arch: https://example.com/WG
-  latest: "https://interop-alliance.github.io/kyapay-ietf-draft/draft-dz-kyapayprofile.html"
+  latest: "https://skyfire-xyz.github.io/kyapay-ietf-draft/draft-skyfire-kyapayprofile.html"
 
 author:
  -
