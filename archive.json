@@ -1,0 +1,251 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2026-01-22T00:06:43.503352+00:00",
+  "repo": "skyfire-xyz/kyapay-ietf-draft",
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [],
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOQZxkd865BgeU",
+      "title": "Add further role definitions.",
+      "url": "https://github.com/skyfire-xyz/kyapay-ietf-draft/pull/1",
+      "state": "MERGED",
+      "author": "dmitrizagidulin",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-12-15T22:09:09Z",
+      "updatedAt": "2025-12-15T22:34:02Z",
+      "baseRepository": "skyfire-xyz/kyapay-ietf-draft",
+      "baseRefName": "main",
+      "baseRefOid": "88d76d0f6c4f56a4e074a1630e863754b0f6600d",
+      "headRepository": "skyfire-xyz/kyapay-ietf-draft",
+      "headRefName": "buy-side-roles",
+      "headRefOid": "f89dd18d82f29dcf9eda96ffac411ba57f6ec2ee",
+      "closedAt": "2025-12-15T22:33:52Z",
+      "mergedAt": "2025-12-15T22:33:52Z",
+      "mergedBy": "dmitrizagidulin",
+      "mergeCommit": {
+        "oid": "7334514db7c57820a097d26d61acef0e8adbaf0a"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 2,
+      "id": "PR_kwDOQZxkd866OMm5",
+      "title": "Update claims statuses, add Validation section",
+      "url": "https://github.com/skyfire-xyz/kyapay-ietf-draft/pull/2",
+      "state": "MERGED",
+      "author": "dmitrizagidulin",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-12-22T21:38:15Z",
+      "updatedAt": "2025-12-22T21:38:28Z",
+      "baseRepository": "skyfire-xyz/kyapay-ietf-draft",
+      "baseRefName": "main",
+      "baseRefOid": "7334514db7c57820a097d26d61acef0e8adbaf0a",
+      "headRepository": "skyfire-xyz/kyapay-ietf-draft",
+      "headRefName": "update",
+      "headRefOid": "6b3e2adb0789e44d42f4272e710bba21056dbe0a",
+      "closedAt": "2025-12-22T21:38:24Z",
+      "mergedAt": "2025-12-22T21:38:24Z",
+      "mergedBy": "dmitrizagidulin",
+      "mergeCommit": {
+        "oid": "37542c53bf417538a6b62516677b2da9f9a378c7"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 3,
+      "id": "PR_kwDOQZxkd8682fCu",
+      "title": "Add additional bid, apd, and rid claims.",
+      "url": "https://github.com/skyfire-xyz/kyapay-ietf-draft/pull/3",
+      "state": "MERGED",
+      "author": "dmitrizagidulin",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-01-13T06:20:52Z",
+      "updatedAt": "2026-01-13T06:22:59Z",
+      "baseRepository": "skyfire-xyz/kyapay-ietf-draft",
+      "baseRefName": "main",
+      "baseRefOid": "37542c53bf417538a6b62516677b2da9f9a378c7",
+      "headRepository": "skyfire-xyz/kyapay-ietf-draft",
+      "headRefName": "add-claims",
+      "headRefOid": "9cdc33cd71f14b376d16194bc052659c634bd0cb",
+      "closedAt": "2026-01-13T06:22:56Z",
+      "mergedAt": "2026-01-13T06:22:56Z",
+      "mergedBy": "dmitrizagidulin",
+      "mergeCommit": {
+        "oid": "6ccc8190f8b84f3191d612a90f3a973dd6a89950"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 4,
+      "id": "PR_kwDOQZxkd869AjBw",
+      "title": "Add expanded introduction.",
+      "url": "https://github.com/skyfire-xyz/kyapay-ietf-draft/pull/4",
+      "state": "MERGED",
+      "author": "dmitrizagidulin",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-01-13T19:47:22Z",
+      "updatedAt": "2026-01-13T19:47:38Z",
+      "baseRepository": "skyfire-xyz/kyapay-ietf-draft",
+      "baseRefName": "main",
+      "baseRefOid": "6ccc8190f8b84f3191d612a90f3a973dd6a89950",
+      "headRepository": "skyfire-xyz/kyapay-ietf-draft",
+      "headRefName": "intro",
+      "headRefOid": "4334ef8c93ea46c4e056b269a8a51023f686e977",
+      "closedAt": "2026-01-13T19:47:34Z",
+      "mergedAt": "2026-01-13T19:47:34Z",
+      "mergedBy": "dmitrizagidulin",
+      "mergeCommit": {
+        "oid": "3ec164572222782f65d16ff1a9d7f42bc7eed445"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 5,
+      "id": "PR_kwDOQZxkd86-XsrQ",
+      "title": "Change author to Ankit.",
+      "url": "https://github.com/skyfire-xyz/kyapay-ietf-draft/pull/5",
+      "state": "MERGED",
+      "author": "dmitrizagidulin",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-01-21T05:52:11Z",
+      "updatedAt": "2026-01-21T05:52:47Z",
+      "baseRepository": "skyfire-xyz/kyapay-ietf-draft",
+      "baseRefName": "main",
+      "baseRefOid": "3ec164572222782f65d16ff1a9d7f42bc7eed445",
+      "headRepository": "skyfire-xyz/kyapay-ietf-draft",
+      "headRefName": "author",
+      "headRefOid": "38ed0faa16efd5ab2e99b0a5fe59e4f3bdcde5ef",
+      "closedAt": "2026-01-21T05:52:41Z",
+      "mergedAt": "2026-01-21T05:52:41Z",
+      "mergedBy": "dmitrizagidulin",
+      "mergeCommit": {
+        "oid": "46cfcd3b2241b16dbd28d11b4056fcbefac067b8"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 6,
+      "id": "PR_kwDOQZxkd86-Xt7_",
+      "title": "Update github profile in config.",
+      "url": "https://github.com/skyfire-xyz/kyapay-ietf-draft/pull/6",
+      "state": "MERGED",
+      "author": "dmitrizagidulin",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-01-21T05:55:08Z",
+      "updatedAt": "2026-01-21T05:58:49Z",
+      "baseRepository": "skyfire-xyz/kyapay-ietf-draft",
+      "baseRefName": "main",
+      "baseRefOid": "46cfcd3b2241b16dbd28d11b4056fcbefac067b8",
+      "headRepository": "skyfire-xyz/kyapay-ietf-draft",
+      "headRefName": "author",
+      "headRefOid": "cfc0c0cb2a131d2bed4f32f8721de8892e115f19",
+      "closedAt": "2026-01-21T05:58:47Z",
+      "mergedAt": "2026-01-21T05:58:47Z",
+      "mergedBy": "dmitrizagidulin",
+      "mergeCommit": {
+        "oid": "0b93357b56a7a70b1076712569f2b8d1d2a789c8"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 7,
+      "id": "PR_kwDOQZxkd86-XzjH",
+      "title": "Update README",
+      "url": "https://github.com/skyfire-xyz/kyapay-ietf-draft/pull/7",
+      "state": "MERGED",
+      "author": "dmitrizagidulin",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-01-21T06:04:28Z",
+      "updatedAt": "2026-01-21T06:04:38Z",
+      "baseRepository": "skyfire-xyz/kyapay-ietf-draft",
+      "baseRefName": "main",
+      "baseRefOid": "0b93357b56a7a70b1076712569f2b8d1d2a789c8",
+      "headRepository": "skyfire-xyz/kyapay-ietf-draft",
+      "headRefName": "author",
+      "headRefOid": "ff9b7ff635051da11890df5bf3a0877023baf20c",
+      "closedAt": "2026-01-21T06:04:35Z",
+      "mergedAt": "2026-01-21T06:04:35Z",
+      "mergedBy": "dmitrizagidulin",
+      "mergeCommit": {
+        "oid": "22ebc3234de2147a056ac2ea52c23a20a3a3b1db"
+      },
+      "comments": [],
+      "reviews": []
+    }
+  ]
+}
