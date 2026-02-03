@@ -73,7 +73,7 @@ Table of Contents
      3.1.  Common Token Claims
      3.2.  KYA Token
        3.2.1.  bid - Buyer Identity Sub-claims
-       3.2.2.  Agent Platform Identity adp Sub-claims
+       3.2.2.  Agent Platform Identity apd Sub-claims
        3.2.3.  Agent Identity aid Sub-claims
      3.3.  PAY Token
      3.4.  KYA+PAY Token
@@ -375,7 +375,7 @@ Table of Contents
    businessRegisteredAddressCountryCode:  ISO country code of registered
       address of principal entity.
 
-3.2.2.  Agent Platform Identity adp Sub-claims
+3.2.2.  Agent Platform Identity apd Sub-claims
 
    The aid claim itself is optional.  If present, it may contain the
    following sub-claims.
