@@ -353,7 +353,7 @@ as follows.
 `businessRegisteredAddressCountryCode`:
 : ISO country code of registered address of principal entity.
 
-### Agent Platform Identity `adp` Sub-claims
+### Agent Platform Identity `apd` Sub-claims
 
 The `aid` claim itself is optional. If present, it may contain the following
 sub-claims.
