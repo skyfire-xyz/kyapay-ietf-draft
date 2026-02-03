@@ -184,13 +184,22 @@ PAY (Payment), and KYA+PAY (combined Know Your Agent and Payment) Tokens.
   A single string value.
 
 `iat`:
-: REQUIRED - as defined in {{Section 4.1.6 of RFC7519}}.
+: REQUIRED - as defined in {{Section 4.1.6 of RFC7519}}.  Identifies the time at which the JWT was issued.  This claim must have a value in the past and can be used to determine the age of the JWT.
 
 `jti`:
 : REQUIRED - Unique ID of this JWT as defined in {{Section 4.1.7 of RFC7519}}.
 
 `exp`:
-: REQUIRED - as defined in {{Section 4.1.4 of RFC7519}}.
+: REQUIRED - as defined in {{Section 4.1.4 of RFC7519}}.  Identifies the expiration time on or after which the JWT MUST NOT be accepted for processing.
+
+`sdm`:
+: REQUIRED - Seller domain, associated with the audience claim, the token is intended for.
+
+`slr`:
+: OPTIONAL - Seller resource locator - the URL the agent is intended to access.
+
+`ori`:
+: OPTIONAL - URL of the token's originator.
 
 `env`:
 : OPTIONAL - Issuer environment (such as "sandbox" or "production").
@@ -344,7 +353,7 @@ as follows.
 `businessRegisteredAddressCountryCode`:
 : ISO country code of registered address of principal entity.
 
-### Agent Platform Identity `aid` Sub-claims
+### Agent Platform Identity `adp` Sub-claims
 
 The `aid` claim itself is optional. If present, it may contain the following
 sub-claims.
@@ -369,6 +378,17 @@ sub-claims.
 
 `businessName`:
 : Business name associated with agent platform.
+
+### Agent Identity `aid` Sub-claims
+
+`name`:
+: REQUIRED - Agent name. The name should reflect the business purpose of the agent.
+
+`creation_ip`:
+: OPTIONAL - IP address of the system that requested the token.
+
+`source_ips`:
+: OPTIONAL - Valid IP address/range of for the agent.
 
 ## PAY Token
 
