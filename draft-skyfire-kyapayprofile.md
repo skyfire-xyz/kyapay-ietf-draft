@@ -385,10 +385,10 @@ sub-claims.
 : REQUIRED - Agent name. The name should reflect the business purpose of the agent.
 
 `creation_ip`:
-: OPTIONAL - IP address of the system that requested the token.
+: OPTIONAL - IP address of the system that requested the token.  Its value is a string containing a numeric IPv4 or IPv6 address or a domain name resolvable to an IP address via DNS.
 
 `source_ips`:
-: OPTIONAL - Valid IP address/range of for the agent.
+: OPTIONAL - Valid IP address range of for the agent.  Its value is array of one or two strings, each representing a numeric IPv4 or IPv6 address or a domain name resolvable to an IP address via DNS.  If there is one string, it represents a single IP address.  If there are two strings, they represent an IP address range inclusive of the two values.
 
 ## PAY Token
 
