@@ -4,8 +4,8 @@
 
 Network Working Group                                         A. Agarwal
 Internet-Draft                                                   Skyfire
-Intended status: Informational                           3 February 2026
-Expires: 7 August 2026
+Intended status: Informational                           4 February 2026
+Expires: 8 August 2026
 
 
                              KYAPay Profile
@@ -45,7 +45,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 7 August 2026.
+   This Internet-Draft will expire on 8 August 2026.
 
 Copyright Notice
 
@@ -400,9 +400,15 @@ Table of Contents
       purpose of the agent.
 
    creation_ip:  OPTIONAL - IP address of the system that requested the
-      token.
+      token.  Its value is a string containing a numeric IPv4 or IPv6
+      address or a domain name resolvable to an IP address via DNS.
 
-   source_ips:  OPTIONAL - Valid IP address/range of for the agent.
+   source_ips:  OPTIONAL - Valid IP address range of for the agent.  Its
+      value is array of one or two strings, each representing a numeric
+      IPv4 or IPv6 address or a domain name resolvable to an IP address
+      via DNS.  If there is one string, it represents a single IP
+      address.  If there are two strings, they represent an IP address
+      range inclusive of the two values.
 
 3.3.  PAY Token
 
