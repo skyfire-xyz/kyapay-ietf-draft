@@ -1847,13 +1847,13 @@ sub-claims.<a href="#section-3.2.2-1" class="pilcrow">¶</a></p>
 <dt id="section-3.2.3-1.3">
 <code>creation_ip</code>:</dt>
             <dd style="margin-left: 1.5em" id="section-3.2.3-1.4">
-              <p id="section-3.2.3-1.4.1"><span class="bcp14">OPTIONAL</span> - IP address of the system that requested the token.  Its value is a string containing a numeric IPv4 or IPv6 address or a domain name resolvable to an IP address via DNS.<a href="#section-3.2.3-1.4.1" class="pilcrow">¶</a></p>
+              <p id="section-3.2.3-1.4.1"><span class="bcp14">OPTIONAL</span> - The public IP address of the system / agent that requested the token. Its value is a string containing the public IPv4 or IPv6 address from where the token request originated. It <span class="bcp14">MUST</span> be captured directly from the token request.<a href="#section-3.2.3-1.4.1" class="pilcrow">¶</a></p>
 </dd>
             <dd class="break"></dd>
 <dt id="section-3.2.3-1.5">
 <code>source_ips</code>:</dt>
             <dd style="margin-left: 1.5em" id="section-3.2.3-1.6">
-              <p id="section-3.2.3-1.6.1"><span class="bcp14">OPTIONAL</span> - Valid IP address range of for the agent.  Its value is array of one or two strings, each representing a numeric IPv4 or IPv6 address or a domain name resolvable to an IP address via DNS.  If there is one string, it represents a single IP address.  If there are two strings, they represent an IP address range inclusive of the two values.<a href="#section-3.2.3-1.6.1" class="pilcrow">¶</a></p>
+              <p id="section-3.2.3-1.6.1"><span class="bcp14">OPTIONAL</span> - Valid public IP address, or range of public IP addresses, from where the system / agent's requests to merchants / services will originate. Array of comma-separated IPv4 addresses or ranges, IPv6 addresses or ranges, or domain names resolvable to an IP address via DNS. IPv4 and IPv6 addresses can be a single IPv4 or IPv6 address or a range of IPv4 or IPv6 addresses in CIDR notation or start-and-end IP pairs.<a href="#section-3.2.3-1.6.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
 </dl>
