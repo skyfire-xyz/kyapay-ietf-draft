@@ -4,8 +4,8 @@
 
 Network Working Group                                         A. Agarwal
 Internet-Draft                                                   Skyfire
-Intended status: Informational                           21 January 2026
-Expires: 25 July 2026
+Intended status: Informational                           5 February 2026
+Expires: 9 August 2026
 
 
                              KYAPay Profile
@@ -45,7 +45,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 July 2026.
+   This Internet-Draft will expire on 9 August 2026.
 
 Copyright Notice
 
@@ -73,7 +73,8 @@ Table of Contents
      3.1.  Common Token Claims
      3.2.  KYA Token
        3.2.1.  bid - Buyer Identity Sub-claims
-       3.2.2.  Agent Platform Identity aid Sub-claims
+       3.2.2.  Agent Platform Identity apd Sub-claims
+       3.2.3.  Agent Identity aid Sub-claims
      3.3.  PAY Token
      3.4.  KYA+PAY Token
    4.  Token Validation
@@ -222,11 +223,24 @@ Table of Contents
       single string value.
 
    iat:  REQUIRED - as defined in Section 4.1.6 of [RFC7519].
+      Identifies the time at which the JWT was issued.  This claim must
+      have a value in the past and can be used to determine the age of
+      the JWT.
 
    jti:  REQUIRED - Unique ID of this JWT as defined in Section 4.1.7 of
       [RFC7519].
 
    exp:  REQUIRED - as defined in Section 4.1.4 of [RFC7519].
+      Identifies the expiration time on or after which the JWT MUST NOT
+      be accepted for processing.
+
+   sdm:  REQUIRED - Seller domain, associated with the audience claim,
+      the token is intended for.
+
+   slr:  OPTIONAL - Seller resource locator - the URL the agent is
+      intended to access.
+
+   ori:  OPTIONAL - URL of the token's originator.
 
    env:  OPTIONAL - Issuer environment (such as "sandbox" or
       "production").
@@ -361,7 +375,7 @@ Table of Contents
    businessRegisteredAddressCountryCode:  ISO country code of registered
       address of principal entity.
 
-3.2.2.  Agent Platform Identity aid Sub-claims
+3.2.2.  Agent Platform Identity apd Sub-claims
 
    The aid claim itself is optional.  If present, it may contain the
    following sub-claims.
@@ -379,6 +393,24 @@ Table of Contents
    phoneNumber:  Phone number associated with agent platform.
 
    businessName:  Business name associated with agent platform.
+
+3.2.3.  Agent Identity aid Sub-claims
+
+   name:  REQUIRED - Agent name.  The name should reflect the business
+      purpose of the agent.
+
+   creation_ip:  OPTIONAL - The public IP address of the system / agent
+      that requested the token.  Its value is a string containing the
+      public IPv4 or IPv6 address from where the token request
+      originated.  It MUST be captured directly from the token request.
+
+   source_ips:  OPTIONAL - Valid public IP address, or range of public
+      IP addresses, from where the system / agent's requests to
+      merchants / services will originate.  Array of comma-separated
+      IPv4 addresses or ranges, IPv6 addresses or ranges, or domain
+      names resolvable to an IP address via DNS.  IPv4 and IPv6
+      addresses can be a single IPv4 or IPv6 address or a range of IPv4
+      or IPv6 addresses in CIDR notation or start-and-end IP pairs.
 
 3.3.  PAY Token
 
