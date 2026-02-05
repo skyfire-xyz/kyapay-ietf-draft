@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-02-03T00:09:28.017312+00:00",
+  "timestamp": "2026-02-05T00:09:09.026955+00:00",
   "repo": "skyfire-xyz/kyapay-ietf-draft",
   "labels": [
     {
@@ -246,6 +246,79 @@
       },
       "comments": [],
       "reviews": []
+    },
+    {
+      "number": 8,
+      "id": "PR_kwDOQZxkd87BJ6XP",
+      "title": "Apply corrections by David Senecal",
+      "url": "https://github.com/skyfire-xyz/kyapay-ietf-draft/pull/8",
+      "state": "OPEN",
+      "author": "selfissued",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "@dsenecal04 please review.",
+      "createdAt": "2026-02-03T10:31:55Z",
+      "updatedAt": "2026-02-04T20:37:30Z",
+      "baseRepository": "skyfire-xyz/kyapay-ietf-draft",
+      "baseRefName": "main",
+      "baseRefOid": "22ebc3234de2147a056ac2ea52c23a20a3a3b1db",
+      "headRepository": "skyfire-xyz/kyapay-ietf-draft",
+      "headRefName": "mbj-david-corrections",
+      "headRefOid": "053a13e9d4706125685c4ce9ceae249020d1ddc5",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOQZxkd87fVMbI",
+          "commit": {
+            "abbreviatedOid": "8ab869a"
+          },
+          "author": "skyfire-ankit",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "LGTM for now. We can further refine as we go.",
+          "createdAt": "2026-02-03T18:28:02Z",
+          "updatedAt": "2026-02-03T18:28:59Z",
+          "comments": [
+            {
+              "originalPosition": 30,
+              "body": "This is `apd`.",
+              "createdAt": "2026-02-03T18:28:02Z",
+              "updatedAt": "2026-02-03T18:28:59Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOQZxkd87foA_8",
+          "commit": {
+            "abbreviatedOid": "9a7e99a"
+          },
+          "author": "skyfire-ankit",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-02-04T15:43:36Z",
+          "updatedAt": "2026-02-04T15:53:30Z",
+          "comments": [
+            {
+              "originalPosition": 44,
+              "body": "\"The public IP address of the system / agent that requested the token. Its value is a string containing the public IPv4 or IPv6 address from where the token request originated. It must be captured directly from the token request.\"",
+              "createdAt": "2026-02-04T15:43:36Z",
+              "updatedAt": "2026-02-04T15:53:30Z"
+            },
+            {
+              "originalPosition": 47,
+              "body": "\"Valid public IP address, or range of public IP addresses, from where the system / agent's requests to merchants / services will originate. Array of comma-separated IPv4 addresses or ranges, IPv6 addresses or ranges, or domain names resolvable to an IP address via DNS. IPv4 and IPv6 addresses can be a single IPv4 or IPv6 address or a range of IPv4 or IPv6 addresses in CIDR notation or start-and-end IP pairs.\"",
+              "createdAt": "2026-02-04T15:53:21Z",
+              "updatedAt": "2026-02-04T15:53:30Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
