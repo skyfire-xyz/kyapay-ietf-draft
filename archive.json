@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-02-05T00:09:09.026955+00:00",
+  "timestamp": "2026-02-08T00:12:25.781865+00:00",
   "repo": "skyfire-xyz/kyapay-ietf-draft",
   "labels": [
     {
@@ -252,24 +252,26 @@
       "id": "PR_kwDOQZxkd87BJ6XP",
       "title": "Apply corrections by David Senecal",
       "url": "https://github.com/skyfire-xyz/kyapay-ietf-draft/pull/8",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "selfissued",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "@dsenecal04 please review.",
       "createdAt": "2026-02-03T10:31:55Z",
-      "updatedAt": "2026-02-04T20:37:30Z",
+      "updatedAt": "2026-02-05T07:46:55Z",
       "baseRepository": "skyfire-xyz/kyapay-ietf-draft",
       "baseRefName": "main",
       "baseRefOid": "22ebc3234de2147a056ac2ea52c23a20a3a3b1db",
       "headRepository": "skyfire-xyz/kyapay-ietf-draft",
       "headRefName": "mbj-david-corrections",
       "headRefOid": "053a13e9d4706125685c4ce9ceae249020d1ddc5",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-02-05T07:46:55Z",
+      "mergedAt": "2026-02-05T07:46:55Z",
+      "mergedBy": "selfissued",
+      "mergeCommit": {
+        "oid": "95325e4401440f3017668c8572853bd76c883cbb"
+      },
       "comments": [],
       "reviews": [
         {
